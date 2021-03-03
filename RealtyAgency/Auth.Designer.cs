@@ -1,6 +1,6 @@
 ﻿namespace RealtyAgency
 {
-    partial class Welcome
+    partial class Auth
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Logo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Subheader = new System.Windows.Forms.Label();
             this.LoginLabel = new System.Windows.Forms.Label();
@@ -36,22 +35,12 @@
             this.LoginInput = new System.Windows.Forms.TextBox();
             this.PasswordInput = new System.Windows.Forms.TextBox();
             this.AuthButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.DataRecoverLink = new System.Windows.Forms.Label();
+            this.RegisterLink = new System.Windows.Forms.Label();
+            this.ShowPassword = new System.Windows.Forms.CheckBox();
+            this.Logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Logo
-            // 
-            this.Logo.Image = global::RealtyAgency.Properties.Resources.logo;
-            this.Logo.Location = new System.Drawing.Point(171, 24);
-            this.Logo.Margin = new System.Windows.Forms.Padding(15);
-            this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(87, 44);
-            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Logo.TabIndex = 0;
-            this.Logo.TabStop = false;
             // 
             // label1
             // 
@@ -67,7 +56,7 @@
             // Subheader
             // 
             this.Subheader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.Subheader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(144)))), ((int)(((byte)(156)))));
+            this.Subheader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.Subheader.Location = new System.Drawing.Point(66, 142);
             this.Subheader.Name = "Subheader";
             this.Subheader.Size = new System.Drawing.Size(296, 42);
@@ -78,7 +67,7 @@
             // LoginLabel
             // 
             this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.LoginLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(144)))), ((int)(((byte)(156)))));
+            this.LoginLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.LoginLabel.Location = new System.Drawing.Point(183, 210);
             this.LoginLabel.Name = "LoginLabel";
             this.LoginLabel.Size = new System.Drawing.Size(63, 23);
@@ -89,7 +78,7 @@
             // PasswordLabel
             // 
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.PasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(144)))), ((int)(((byte)(156)))));
+            this.PasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.PasswordLabel.Location = new System.Drawing.Point(184, 288);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(61, 22);
@@ -110,6 +99,7 @@
             this.PasswordInput.Name = "PasswordInput";
             this.PasswordInput.Size = new System.Drawing.Size(238, 20);
             this.PasswordInput.TabIndex = 6;
+            this.PasswordInput.UseSystemPasswordChar = true;
             // 
             // AuthButton
             // 
@@ -124,49 +114,64 @@
             this.AuthButton.TabIndex = 7;
             this.AuthButton.Text = "Авторизоваться";
             this.AuthButton.UseVisualStyleBackColor = false;
+            this.AuthButton.Click += new System.EventHandler(this.AuthButton_Click);
             // 
-            // label2
+            // DataRecoverLink
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.label2.Location = new System.Drawing.Point(150, 444);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 22);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Забыли данные?";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DataRecoverLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
+            this.DataRecoverLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.DataRecoverLink.Location = new System.Drawing.Point(150, 444);
+            this.DataRecoverLink.Name = "DataRecoverLink";
+            this.DataRecoverLink.Size = new System.Drawing.Size(128, 22);
+            this.DataRecoverLink.TabIndex = 8;
+            this.DataRecoverLink.Text = "Забыли данные?";
+            this.DataRecoverLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DataRecoverLink.Click += new System.EventHandler(this.DataRecoverLink_Click);
             // 
-            // label3
+            // RegisterLink
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.label3.Location = new System.Drawing.Point(122, 476);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(184, 22);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Еще нет учетной записи?";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegisterLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
+            this.RegisterLink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.RegisterLink.Location = new System.Drawing.Point(122, 476);
+            this.RegisterLink.Name = "RegisterLink";
+            this.RegisterLink.Size = new System.Drawing.Size(184, 22);
+            this.RegisterLink.TabIndex = 9;
+            this.RegisterLink.Text = "Еще нет учетной записи?";
+            this.RegisterLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegisterLink.Click += new System.EventHandler(this.RegisterLink_Click);
             // 
-            // checkBox1
+            // ShowPassword
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(144)))), ((int)(((byte)(156)))));
-            this.checkBox1.Location = new System.Drawing.Point(160, 358);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(114, 17);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Показать пароль";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ShowPassword.AutoSize = true;
+            this.ShowPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.ShowPassword.Location = new System.Drawing.Point(160, 358);
+            this.ShowPassword.Name = "ShowPassword";
+            this.ShowPassword.Size = new System.Drawing.Size(114, 17);
+            this.ShowPassword.TabIndex = 10;
+            this.ShowPassword.Text = "Показать пароль";
+            this.ShowPassword.UseVisualStyleBackColor = true;
+            this.ShowPassword.CheckedChanged += new System.EventHandler(this.ShowPassword_CheckedChanged);
             // 
-            // Welcome
+            // Logo
+            // 
+            this.Logo.Image = global::RealtyAgency.Properties.Resources.logo;
+            this.Logo.Location = new System.Drawing.Point(171, 24);
+            this.Logo.Margin = new System.Windows.Forms.Padding(15);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(87, 44);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Logo.TabIndex = 0;
+            this.Logo.TabStop = false;
+            // 
+            // Auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(425, 532);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ShowPassword);
+            this.Controls.Add(this.RegisterLink);
+            this.Controls.Add(this.DataRecoverLink);
             this.Controls.Add(this.AuthButton);
             this.Controls.Add(this.PasswordInput);
             this.Controls.Add(this.LoginInput);
@@ -176,9 +181,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Welcome";
+            this.MaximizeBox = false;
+            this.Name = "Auth";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Агенство недвижимости";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Auth_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,9 +202,9 @@
         private System.Windows.Forms.TextBox LoginInput;
         private System.Windows.Forms.TextBox PasswordInput;
         private System.Windows.Forms.Button AuthButton;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label DataRecoverLink;
+        private System.Windows.Forms.Label RegisterLink;
+        private System.Windows.Forms.CheckBox ShowPassword;
     }
 }
 

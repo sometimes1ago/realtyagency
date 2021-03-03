@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace RealtyAgency
 {
-    public partial class Welcome : Form
+    public partial class RieltorsList : Form
     {
-        public Welcome()
+        private Form FormToBack;
+        public RieltorsList(User User)
         {
             InitializeComponent();
+            FormToBack = User;
+        }
+
+        private void RieltorsList_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

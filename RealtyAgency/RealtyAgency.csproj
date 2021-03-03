@@ -46,16 +46,89 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Welcome.cs">
+    <Compile Include="BuyRealty.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Welcome.Designer.cs">
-      <DependentUpon>Welcome.cs</DependentUpon>
+    <Compile Include="BuyRealty.Designer.cs">
+      <DependentUpon>BuyRealty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cabinet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cabinet.Designer.cs">
+      <DependentUpon>Cabinet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataRecover.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataRecover.Designer.cs">
+      <DependentUpon>DataRecover.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB.cs" />
+    <Compile Include="Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rieltor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rieltor.Designer.cs">
+      <DependentUpon>Rieltor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RieltorsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RieltorsList.Designer.cs">
+      <DependentUpon>RieltorsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellRealty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellRealty.Designer.cs">
+      <DependentUpon>SellRealty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auth.Designer.cs">
+      <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Welcome.resx">
-      <DependentUpon>Welcome.cs</DependentUpon>
+    <EmbeddedResource Include="BuyRealty.resx">
+      <DependentUpon>BuyRealty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cabinet.resx">
+      <DependentUpon>Cabinet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataRecover.resx">
+      <DependentUpon>DataRecover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rieltor.resx">
+      <DependentUpon>Rieltor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RieltorsList.resx">
+      <DependentUpon>RieltorsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellRealty.resx">
+      <DependentUpon>SellRealty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auth.resx">
+      <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
