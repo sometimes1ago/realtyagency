@@ -48,6 +48,7 @@
             this.GoBack.TabStop = true;
             this.GoBack.Text = "Назад";
             this.GoBack.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.GoBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GoBack_LinkClicked);
             // 
             // SectionHeader
             // 

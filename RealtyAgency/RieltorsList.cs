@@ -23,5 +23,11 @@ namespace RealtyAgency
         {
             Application.Exit();
         }
+
+        private void GoBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Hide();
+            FormToBack.Show();
+        }
     }
 }

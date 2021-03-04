@@ -66,22 +66,24 @@
             // 
             // LoginLabel
             // 
+            this.LoginLabel.AutoSize = true;
             this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
             this.LoginLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.LoginLabel.Location = new System.Drawing.Point(183, 210);
+            this.LoginLabel.Location = new System.Drawing.Point(184, 209);
             this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(63, 23);
+            this.LoginLabel.Size = new System.Drawing.Size(47, 17);
             this.LoginLabel.TabIndex = 3;
             this.LoginLabel.Text = "Логин";
             this.LoginLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PasswordLabel
             // 
+            this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
             this.PasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.PasswordLabel.Location = new System.Drawing.Point(184, 288);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(61, 22);
+            this.PasswordLabel.Size = new System.Drawing.Size(57, 17);
             this.PasswordLabel.TabIndex = 4;
             this.PasswordLabel.Text = "Пароль";
             this.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

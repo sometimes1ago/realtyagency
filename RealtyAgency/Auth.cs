@@ -97,7 +97,9 @@ namespace RealtyAgency
 
         private void RegisterLink_Click(object sender, EventArgs e)
         {
-
+            Registration reg = new Registration(this);
+            Hide();
+            reg.Show();
         }
     }
 }
