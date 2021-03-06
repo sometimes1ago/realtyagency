@@ -89,6 +89,7 @@
             this.SellButton.TabIndex = 9;
             this.SellButton.Text = "Продать недвижимость";
             this.SellButton.UseVisualStyleBackColor = false;
+            this.SellButton.Click += new System.EventHandler(this.SellButton_Click);
             // 
             // CabinetButton
             // 

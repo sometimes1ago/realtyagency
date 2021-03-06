@@ -143,6 +143,22 @@ as
 		end
 go
 
+create table ClietnsOffers
+(
+ID int primary key identity,
+Offer int foreign key references RealtyOffers(OfferID),
+Client int foreign key references Clients(ClientID)
+)
+go
+
+create table Needs
+(
+ID int primary key identity,
+Offer int foreign key references RealtyOffers(OfferID),
+Client int foreign key references Clients(ClientID),
+Rieltor int foreign key references Rieltors(RieltorID)
+)
+go
 
 create view GetLastUserID
 (ID)

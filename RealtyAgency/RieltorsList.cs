@@ -29,5 +29,11 @@ namespace RealtyAgency
             Hide();
             FormToBack.Show();
         }
+
+        private void RieltorsList_Load(object sender, EventArgs e)
+        {
+            string GetRieltors = "select * from GetRieltorsData";
+            RieltorsData.DataSource = DB.SearchValuesQuery(GetRieltors);
+        }
     }
 }

@@ -37,11 +37,11 @@
             this.SortOptions = new System.Windows.Forms.ComboBox();
             this.SortByLabel = new System.Windows.Forms.Label();
             this.BuyRealtyGroup = new System.Windows.Forms.GroupBox();
-            this.RieltorsOptions = new System.Windows.Forms.ComboBox();
-            this.SelectRieltorLabel = new System.Windows.Forms.Label();
+            this.HousesRieltorOpt = new System.Windows.Forms.ComboBox();
+            this.SelHousesRiel = new System.Windows.Forms.Label();
+            this.AdrOpt = new System.Windows.Forms.ComboBox();
+            this.SelHousesAdr = new System.Windows.Forms.Label();
             this.SearchButton = new System.Windows.Forms.Button();
-            this.RealtyOptions = new System.Windows.Forms.ComboBox();
-            this.SelectRealtyLabel = new System.Windows.Forms.Label();
             this.GoBack = new System.Windows.Forms.LinkLabel();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.RealtyOptionsTabs = new System.Windows.Forms.TabControl();
@@ -51,7 +51,7 @@
             this.ArptShowButton = new System.Windows.Forms.Button();
             this.ArptOrderByOptions = new System.Windows.Forms.ComboBox();
             this.AprtOrderByLabel = new System.Windows.Forms.Label();
-            this.ArptSortByOptions = new System.Windows.Forms.ComboBox();
+            this.ArptSortByOpt = new System.Windows.Forms.ComboBox();
             this.AprtSortByLabel = new System.Windows.Forms.Label();
             this.ApartamentsData = new System.Windows.Forms.DataGridView();
             this.ArptBuyingGroup = new System.Windows.Forms.GroupBox();
@@ -109,7 +109,7 @@
             this.HousesData.Location = new System.Drawing.Point(14, 16);
             this.HousesData.Name = "HousesData";
             this.HousesData.ReadOnly = true;
-            this.HousesData.Size = new System.Drawing.Size(768, 283);
+            this.HousesData.Size = new System.Drawing.Size(735, 283);
             this.HousesData.TabIndex = 17;
             // 
             // SortingGroup
@@ -140,10 +140,14 @@
             this.ShowSortedButton.TabIndex = 19;
             this.ShowSortedButton.Text = "Показать";
             this.ShowSortedButton.UseVisualStyleBackColor = false;
+            this.ShowSortedButton.Click += new System.EventHandler(this.ShowSortedButton_Click);
             // 
             // OrderOptions
             // 
             this.OrderOptions.FormattingEnabled = true;
+            this.OrderOptions.Items.AddRange(new object[] {
+            "Убыванию",
+            "Возрастанию"});
             this.OrderOptions.Location = new System.Drawing.Point(125, 63);
             this.OrderOptions.Name = "OrderOptions";
             this.OrderOptions.Size = new System.Drawing.Size(121, 21);
@@ -163,6 +167,12 @@
             // SortOptions
             // 
             this.SortOptions.FormattingEnabled = true;
+            this.SortOptions.Items.AddRange(new object[] {
+            "Городу",
+            "Улице",
+            "Дому",
+            "Комнатам",
+            "Этажам"});
             this.SortOptions.Location = new System.Drawing.Point(125, 26);
             this.SortOptions.Name = "SortOptions";
             this.SortOptions.Size = new System.Drawing.Size(121, 21);
@@ -181,37 +191,56 @@
             // 
             // BuyRealtyGroup
             // 
-            this.BuyRealtyGroup.Controls.Add(this.RieltorsOptions);
-            this.BuyRealtyGroup.Controls.Add(this.SelectRieltorLabel);
+            this.BuyRealtyGroup.Controls.Add(this.HousesRieltorOpt);
+            this.BuyRealtyGroup.Controls.Add(this.SelHousesRiel);
+            this.BuyRealtyGroup.Controls.Add(this.AdrOpt);
+            this.BuyRealtyGroup.Controls.Add(this.SelHousesAdr);
             this.BuyRealtyGroup.Controls.Add(this.SearchButton);
-            this.BuyRealtyGroup.Controls.Add(this.RealtyOptions);
-            this.BuyRealtyGroup.Controls.Add(this.SelectRealtyLabel);
             this.BuyRealtyGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.BuyRealtyGroup.Location = new System.Drawing.Point(336, 323);
             this.BuyRealtyGroup.Name = "BuyRealtyGroup";
-            this.BuyRealtyGroup.Size = new System.Drawing.Size(446, 153);
+            this.BuyRealtyGroup.Size = new System.Drawing.Size(413, 153);
             this.BuyRealtyGroup.TabIndex = 20;
             this.BuyRealtyGroup.TabStop = false;
-            this.BuyRealtyGroup.Text = "Покупка недвижимости";
+            this.BuyRealtyGroup.Text = "Оформление заявки";
             // 
-            // RieltorsOptions
+            // HousesRieltorOpt
             // 
-            this.RieltorsOptions.FormattingEnabled = true;
-            this.RieltorsOptions.Location = new System.Drawing.Point(196, 63);
-            this.RieltorsOptions.Name = "RieltorsOptions";
-            this.RieltorsOptions.Size = new System.Drawing.Size(230, 21);
-            this.RieltorsOptions.TabIndex = 21;
+            this.HousesRieltorOpt.FormattingEnabled = true;
+            this.HousesRieltorOpt.Location = new System.Drawing.Point(164, 62);
+            this.HousesRieltorOpt.Name = "HousesRieltorOpt";
+            this.HousesRieltorOpt.Size = new System.Drawing.Size(165, 21);
+            this.HousesRieltorOpt.TabIndex = 23;
             // 
-            // SelectRieltorLabel
+            // SelHousesRiel
             // 
-            this.SelectRieltorLabel.AutoSize = true;
-            this.SelectRieltorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.SelectRieltorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.SelectRieltorLabel.Location = new System.Drawing.Point(15, 64);
-            this.SelectRieltorLabel.Name = "SelectRieltorLabel";
-            this.SelectRieltorLabel.Size = new System.Drawing.Size(125, 15);
-            this.SelectRieltorLabel.TabIndex = 20;
-            this.SelectRieltorLabel.Text = "Выберите риелтора";
+            this.SelHousesRiel.AutoSize = true;
+            this.SelHousesRiel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
+            this.SelHousesRiel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.SelHousesRiel.Location = new System.Drawing.Point(15, 63);
+            this.SelHousesRiel.Name = "SelHousesRiel";
+            this.SelHousesRiel.Size = new System.Drawing.Size(125, 15);
+            this.SelHousesRiel.TabIndex = 22;
+            this.SelHousesRiel.Text = "Выберите риелтора";
+            // 
+            // AdrOpt
+            // 
+            this.AdrOpt.FormattingEnabled = true;
+            this.AdrOpt.Location = new System.Drawing.Point(164, 26);
+            this.AdrOpt.Name = "AdrOpt";
+            this.AdrOpt.Size = new System.Drawing.Size(165, 21);
+            this.AdrOpt.TabIndex = 21;
+            // 
+            // SelHousesAdr
+            // 
+            this.SelHousesAdr.AutoSize = true;
+            this.SelHousesAdr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
+            this.SelHousesAdr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.SelHousesAdr.Location = new System.Drawing.Point(15, 27);
+            this.SelHousesAdr.Name = "SelHousesAdr";
+            this.SelHousesAdr.Size = new System.Drawing.Size(103, 15);
+            this.SelHousesAdr.TabIndex = 20;
+            this.SelHousesAdr.Text = "Выберите адрес";
             // 
             // SearchButton
             // 
@@ -226,25 +255,7 @@
             this.SearchButton.TabIndex = 19;
             this.SearchButton.Text = "Купить";
             this.SearchButton.UseVisualStyleBackColor = false;
-            // 
-            // RealtyOptions
-            // 
-            this.RealtyOptions.FormattingEnabled = true;
-            this.RealtyOptions.Location = new System.Drawing.Point(196, 25);
-            this.RealtyOptions.Name = "RealtyOptions";
-            this.RealtyOptions.Size = new System.Drawing.Size(230, 21);
-            this.RealtyOptions.TabIndex = 5;
-            // 
-            // SelectRealtyLabel
-            // 
-            this.SelectRealtyLabel.AutoSize = true;
-            this.SelectRealtyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.SelectRealtyLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.SelectRealtyLabel.Location = new System.Drawing.Point(15, 26);
-            this.SelectRealtyLabel.Name = "SelectRealtyLabel";
-            this.SelectRealtyLabel.Size = new System.Drawing.Size(156, 15);
-            this.SelectRealtyLabel.TabIndex = 4;
-            this.SelectRealtyLabel.Text = "Выберите недвижимость";
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // GoBack
             // 
@@ -265,7 +276,7 @@
             // Logo
             // 
             this.Logo.Image = global::RealtyAgency.Properties.Resources.logo;
-            this.Logo.Location = new System.Drawing.Point(713, 19);
+            this.Logo.Location = new System.Drawing.Point(1054, 24);
             this.Logo.Margin = new System.Windows.Forms.Padding(15);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(97, 29);
@@ -281,7 +292,7 @@
             this.RealtyOptionsTabs.Location = new System.Drawing.Point(12, 51);
             this.RealtyOptionsTabs.Name = "RealtyOptionsTabs";
             this.RealtyOptionsTabs.SelectedIndex = 0;
-            this.RealtyOptionsTabs.Size = new System.Drawing.Size(810, 522);
+            this.RealtyOptionsTabs.Size = new System.Drawing.Size(787, 522);
             this.RealtyOptionsTabs.TabIndex = 22;
             // 
             // Houses
@@ -292,7 +303,7 @@
             this.Houses.Location = new System.Drawing.Point(4, 22);
             this.Houses.Name = "Houses";
             this.Houses.Padding = new System.Windows.Forms.Padding(3);
-            this.Houses.Size = new System.Drawing.Size(802, 496);
+            this.Houses.Size = new System.Drawing.Size(779, 496);
             this.Houses.TabIndex = 0;
             this.Houses.Text = "Дома";
             this.Houses.UseVisualStyleBackColor = true;
@@ -305,7 +316,7 @@
             this.Apartaments.Location = new System.Drawing.Point(4, 22);
             this.Apartaments.Name = "Apartaments";
             this.Apartaments.Padding = new System.Windows.Forms.Padding(3);
-            this.Apartaments.Size = new System.Drawing.Size(802, 496);
+            this.Apartaments.Size = new System.Drawing.Size(779, 496);
             this.Apartaments.TabIndex = 1;
             this.Apartaments.Text = "Квартиры";
             this.Apartaments.UseVisualStyleBackColor = true;
@@ -315,7 +326,7 @@
             this.AprtSortGroup.Controls.Add(this.ArptShowButton);
             this.AprtSortGroup.Controls.Add(this.ArptOrderByOptions);
             this.AprtSortGroup.Controls.Add(this.AprtOrderByLabel);
-            this.AprtSortGroup.Controls.Add(this.ArptSortByOptions);
+            this.AprtSortGroup.Controls.Add(this.ArptSortByOpt);
             this.AprtSortGroup.Controls.Add(this.AprtSortByLabel);
             this.AprtSortGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.AprtSortGroup.Location = new System.Drawing.Point(17, 325);
@@ -338,10 +349,14 @@
             this.ArptShowButton.TabIndex = 19;
             this.ArptShowButton.Text = "Показать";
             this.ArptShowButton.UseVisualStyleBackColor = false;
+            this.ArptShowButton.Click += new System.EventHandler(this.ArptShowButton_Click);
             // 
             // ArptOrderByOptions
             // 
             this.ArptOrderByOptions.FormattingEnabled = true;
+            this.ArptOrderByOptions.Items.AddRange(new object[] {
+            "Убыванию",
+            "Возрастанию"});
             this.ArptOrderByOptions.Location = new System.Drawing.Point(125, 63);
             this.ArptOrderByOptions.Name = "ArptOrderByOptions";
             this.ArptOrderByOptions.Size = new System.Drawing.Size(121, 21);
@@ -358,13 +373,19 @@
             this.AprtOrderByLabel.TabIndex = 6;
             this.AprtOrderByLabel.Text = "Порядок по";
             // 
-            // ArptSortByOptions
+            // ArptSortByOpt
             // 
-            this.ArptSortByOptions.FormattingEnabled = true;
-            this.ArptSortByOptions.Location = new System.Drawing.Point(125, 26);
-            this.ArptSortByOptions.Name = "ArptSortByOptions";
-            this.ArptSortByOptions.Size = new System.Drawing.Size(121, 21);
-            this.ArptSortByOptions.TabIndex = 5;
+            this.ArptSortByOpt.FormattingEnabled = true;
+            this.ArptSortByOpt.Items.AddRange(new object[] {
+            "Городу",
+            "Улице",
+            "Дому",
+            "Комнатам",
+            "Этажам"});
+            this.ArptSortByOpt.Location = new System.Drawing.Point(125, 26);
+            this.ArptSortByOpt.Name = "ArptSortByOpt";
+            this.ArptSortByOpt.Size = new System.Drawing.Size(121, 21);
+            this.ArptSortByOpt.TabIndex = 5;
             // 
             // AprtSortByLabel
             // 
@@ -462,7 +483,7 @@
             this.Areas.Controls.Add(this.AreasBuyingGroup);
             this.Areas.Location = new System.Drawing.Point(4, 22);
             this.Areas.Name = "Areas";
-            this.Areas.Size = new System.Drawing.Size(802, 496);
+            this.Areas.Size = new System.Drawing.Size(779, 496);
             this.Areas.TabIndex = 2;
             this.Areas.Text = "Земля";
             this.Areas.UseVisualStyleBackColor = true;
@@ -617,7 +638,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(834, 586);
+            this.ClientSize = new System.Drawing.Size(810, 586);
             this.Controls.Add(this.RealtyOptionsTabs);
             this.Controls.Add(this.GoBack);
             this.Controls.Add(this.Logo);
@@ -628,6 +649,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Агенство недвижимости - Покупка";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BuyRealty_FormClosing);
+            this.Load += new System.EventHandler(this.BuyRealty_Load);
             ((System.ComponentModel.ISupportInitialize)(this.HousesData)).EndInit();
             this.SortingGroup.ResumeLayout(false);
             this.SortingGroup.PerformLayout();
@@ -666,10 +688,8 @@
         private System.Windows.Forms.Button ShowSortedButton;
         private System.Windows.Forms.GroupBox BuyRealtyGroup;
         private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.ComboBox RealtyOptions;
-        private System.Windows.Forms.Label SelectRealtyLabel;
-        private System.Windows.Forms.ComboBox RieltorsOptions;
-        private System.Windows.Forms.Label SelectRieltorLabel;
+        private System.Windows.Forms.ComboBox AdrOpt;
+        private System.Windows.Forms.Label SelHousesAdr;
         private System.Windows.Forms.LinkLabel GoBack;
         private System.Windows.Forms.TabControl RealtyOptionsTabs;
         private System.Windows.Forms.TabPage Houses;
@@ -679,7 +699,7 @@
         private System.Windows.Forms.Button ArptShowButton;
         private System.Windows.Forms.ComboBox ArptOrderByOptions;
         private System.Windows.Forms.Label AprtOrderByLabel;
-        private System.Windows.Forms.ComboBox ArptSortByOptions;
+        private System.Windows.Forms.ComboBox ArptSortByOpt;
         private System.Windows.Forms.Label AprtSortByLabel;
         private System.Windows.Forms.DataGridView ApartamentsData;
         private System.Windows.Forms.GroupBox ArptBuyingGroup;
@@ -701,5 +721,7 @@
         private System.Windows.Forms.Button AreasBuyButton;
         private System.Windows.Forms.ComboBox AreasOptions;
         private System.Windows.Forms.Label AreasLabel;
+        private System.Windows.Forms.Label SelHousesRiel;
+        private System.Windows.Forms.ComboBox HousesRieltorOpt;
     }
 }

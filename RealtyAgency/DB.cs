@@ -51,18 +51,6 @@ namespace RealtyAgency
         }
 
         /// <summary>
-        /// Метод получающий поле по которому будет производиться сортировка
-        /// </summary>
-        /// <param name="sortby">Поле сортировки</param>
-        /// <returns></returns>
-        public static string GetSortMode(string sortBy)
-        {
-            
-
-            return sortBy;
-        }
-
-        /// <summary>
         /// Метод получающий порядок сортировки
         /// </summary>
         /// <param name="orderby">Порядок сортировки</param>
@@ -84,7 +72,7 @@ namespace RealtyAgency
 
         public static object GetAuthorizedUserID()
         {
-            string Query = "select ID_Пользователя from Пользователи where Логин = " + "\'" + AuthorizedUser + "\'";
+            string Query = "select UserID from Users where UserLogin = " + "\'" + AuthorizedUser + "\'";
             return SearchValuesQuery(Query);
         }
 

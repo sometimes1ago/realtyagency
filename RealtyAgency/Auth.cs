@@ -18,7 +18,6 @@ namespace RealtyAgency
         }
 
         private bool IsCorrect = false;
-        private string UserRole;
 
         private void AuthButton_Click(object sender, EventArgs e)
         {

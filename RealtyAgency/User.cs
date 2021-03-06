@@ -57,5 +57,12 @@ namespace RealtyAgency
         {
             Application.Exit();
         }
+
+        private void SellButton_Click(object sender, EventArgs e)
+        {
+            SellRealty sr = new SellRealty(this);
+            Hide();
+            sr.Show();
+        }
     }
 }

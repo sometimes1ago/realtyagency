@@ -30,8 +30,8 @@
         {
             this.GoBack = new System.Windows.Forms.LinkLabel();
             this.SectionHeader = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.RieltorsData = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.RieltorsData)).BeginInit();
             this.SuspendLayout();
             // 
             // GoBack
@@ -61,16 +61,16 @@
             this.SectionHeader.TabIndex = 22;
             this.SectionHeader.Text = "Список риелторов";
             // 
-            // dataGridView1
+            // RieltorsData
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 68);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(740, 266);
-            this.dataGridView1.TabIndex = 24;
+            this.RieltorsData.AllowUserToAddRows = false;
+            this.RieltorsData.AllowUserToDeleteRows = false;
+            this.RieltorsData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.RieltorsData.Location = new System.Drawing.Point(21, 68);
+            this.RieltorsData.Name = "RieltorsData";
+            this.RieltorsData.ReadOnly = true;
+            this.RieltorsData.Size = new System.Drawing.Size(740, 266);
+            this.RieltorsData.TabIndex = 24;
             // 
             // RieltorsList
             // 
@@ -78,7 +78,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(784, 361);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.RieltorsData);
             this.Controls.Add(this.GoBack);
             this.Controls.Add(this.SectionHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -87,7 +87,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Агенство недвижимости - список риелторов";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RieltorsList_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.RieltorsList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.RieltorsData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,6 +98,6 @@
 
         private System.Windows.Forms.LinkLabel GoBack;
         private System.Windows.Forms.Label SectionHeader;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView RieltorsData;
     }
 }
