@@ -51,6 +51,10 @@
             this.TotalAreaInput = new System.Windows.Forms.TextBox();
             this.TotalArea = new System.Windows.Forms.Label();
             this.SellButton = new System.Windows.Forms.Button();
+            this.Logo = new System.Windows.Forms.PictureBox();
+            this.PriceInput = new System.Windows.Forms.TextBox();
+            this.PriceLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // GoBack
@@ -87,7 +91,7 @@
             this.RealtyType.Items.AddRange(new object[] {
             "Дома",
             "Квартиры",
-            "Земли"});
+            "Земля"});
             this.RealtyType.Location = new System.Drawing.Point(30, 130);
             this.RealtyType.Name = "RealtyType";
             this.RealtyType.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -254,7 +258,7 @@
             this.SellButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SellButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
             this.SellButton.ForeColor = System.Drawing.Color.White;
-            this.SellButton.Location = new System.Drawing.Point(536, 181);
+            this.SellButton.Location = new System.Drawing.Point(536, 264);
             this.SellButton.Name = "SellButton";
             this.SellButton.Size = new System.Drawing.Size(140, 36);
             this.SellButton.TabIndex = 44;
@@ -262,11 +266,42 @@
             this.SellButton.UseVisualStyleBackColor = false;
             this.SellButton.Click += new System.EventHandler(this.SellButton_Click);
             // 
+            // Logo
+            // 
+            this.Logo.Image = global::RealtyAgency.Properties.Resources.logo;
+            this.Logo.Location = new System.Drawing.Point(717, 22);
+            this.Logo.Margin = new System.Windows.Forms.Padding(15);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(43, 22);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Logo.TabIndex = 45;
+            this.Logo.TabStop = false;
+            // 
+            // PriceInput
+            // 
+            this.PriceInput.Location = new System.Drawing.Point(536, 208);
+            this.PriceInput.Name = "PriceInput";
+            this.PriceInput.Size = new System.Drawing.Size(100, 20);
+            this.PriceInput.TabIndex = 47;
+            // 
+            // PriceLabel
+            // 
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.Location = new System.Drawing.Point(533, 182);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(178, 13);
+            this.PriceLabel.TabIndex = 46;
+            this.PriceLabel.Text = "Общая площадь(целые значения)";
+            // 
             // SellRealty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(784, 375);
+            this.Controls.Add(this.PriceInput);
+            this.Controls.Add(this.PriceLabel);
+            this.Controls.Add(this.Logo);
             this.Controls.Add(this.SellButton);
             this.Controls.Add(this.TotalAreaInput);
             this.Controls.Add(this.TotalArea);
@@ -295,7 +330,9 @@
             this.Name = "SellRealty";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Агенство недвижимости - Продажа";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SellRealty_FormClosing);
             this.Load += new System.EventHandler(this.SellRealty_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,5 +363,8 @@
         private System.Windows.Forms.TextBox TotalAreaInput;
         private System.Windows.Forms.Label TotalArea;
         private System.Windows.Forms.Button SellButton;
+        private System.Windows.Forms.PictureBox Logo;
+        private System.Windows.Forms.TextBox PriceInput;
+        private System.Windows.Forms.Label PriceLabel;
     }
 }

@@ -98,6 +98,44 @@ on delete cascade not null
 )
 go
 
+create table OfferType
+(
+ID int primary key identity,
+TypeName varchar(25) not null
+)
+go
+
+insert into OfferType(TypeName) 
+values	('Дома'),
+		('Квартиры'),
+		('Земля')
+go
+
+create table RealtyOffers
+(
+OfferID int primary key identity,
+OfferType int foreign key references OfferType(ID),
+City varchar(100) not null,
+Street varchar(100) not null,
+House varchar(10) not null,
+Number int not null,
+Latitude float not null,
+Longitude float not null,
+RFloor int not null,
+Rooms int not null,
+TotalArea int not null
+)
+go
+
+create view GetRealtyData
+(OfferType, City, Street, House, Number, Latitude, Longitude, RFloor, Rooms, TotalArea, Price)
+as
+	select OfferType.TypeName,City, Street, House, Number, Latitude, Longitude, RFloor, Rooms, TotalArea, Price
+	from RealtyOffers inner join OfferType on RealtyOffers.OfferType = OfferType.ID
+go
+
+select * from GetRealtyData
+
 create view GetAuthData
 (UserLogin, UserPassword, UserRole)
 as
@@ -113,6 +151,37 @@ as
 		from Clients inner join Users on Users.UserID = Clients.AuthData
 		where Users.UserLogin = @userlogin
 	end
+go
+
+create view GetRieltorsData
+(Surname, Name, LastName, DealShare, Status)
+as
+	select FirstName, MiddleName, LastName, DealShare, Status
+	from Rieltors
+go
+
+create procedure GetAddresses
+@offerType varchar(25)
+as
+select City, Street, House, Number from RealtyOffers inner join OfferType on RealtyOffers.OfferType = OfferType.ID
+where OfferType.TypeName = @offerType
+go
+
+create table ClientsOffers
+(
+ID int primary key identity,
+Offer int foreign key references RealtyOffers(OfferID) not null,
+Client int foreign key references Clients(ClientID) not null
+)
+go
+
+create table ClientsWishes
+(
+ID int primary key identity,
+Offer int foreign key references RealtyOffers(OfferID) not null,
+Client int foreign key references Clients(ClientID) not null,
+Rieltor int foreign key references Rieltors(RieltorID) not null
+)
 go
 
 execute GetAuthorizedUserData 'client'
@@ -143,22 +212,48 @@ as
 		end
 go
 
-create table ClietnsOffers
-(
-ID int primary key identity,
-Offer int foreign key references RealtyOffers(OfferID),
-Client int foreign key references Clients(ClientID)
-)
+create alter trigger NewClientWishesChecker
+on ClientsWishes 
+for insert, update
+as
+	declare @wish int = (select Offer from inserted)
+	declare @client int = (select Client from inserted)
+		if ((select count(*) from ClientsWishes where Client = @client and Offer = @wish) > 1)
+			begin
+				raiserror('Вы уже выбрали данное предложение! Повторый выбор невозможен',0,1)
+				rollback transaction
+			end
 go
 
-create table Needs
-(
-ID int primary key identity,
-Offer int foreign key references RealtyOffers(OfferID),
-Client int foreign key references Clients(ClientID),
-Rieltor int foreign key references Rieltors(RieltorID)
-)
+select * from GetRealtyData where OfferType = 'Земля'
+
+create procedure GetClientIDByAuthedUser
+@userlogin varchar(25)
+as
+	begin
+		select Clients.ClientID
+		from Clients inner join Users on Clients.AuthData = Users.UserID
+		where Users.UserLogin = @userlogin
+	end
 go
+
+execute GetClientIDByAuthedUser 'testing'
+
+create procedure GetUserSuggestions
+@userlogin varchar(25)
+as
+	begin
+		select ClientsOffers.Offer, OfferType.TypeName,City, Street, House, Number, Latitude, Longitude, RFloor, Rooms, TotalArea, Price
+		from ClientsOffers inner join Clients on ClientsOffers.Client = Clients.ClientID
+						   inner join Users on Users.UserID = Clients.AuthData
+						   inner join RealtyOffers on RealtyOffers.OfferID = ClientsOffers.Offer
+						   inner join OfferType on RealtyOffers.OfferType = OfferType.ID
+		where Users.UserLogin = @userlogin
+	end
+go
+
+
+execute GetUserSuggestions 'testing'
 
 create view GetLastUserID
 (ID)

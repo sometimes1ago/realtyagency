@@ -24,13 +24,6 @@ namespace RealtyAgency
             buyrealty.Show();
         }
 
-        private void ShowRieltorsButton_Click(object sender, EventArgs e)
-        {
-            RieltorsList rlist = new RieltorsList(this);
-            Hide();
-            rlist.Show();
-        }
-
         private void CabinetButton_Click(object sender, EventArgs e)
         {
             Cabinet cab = new Cabinet(this);

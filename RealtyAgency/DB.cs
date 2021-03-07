@@ -76,7 +76,14 @@ namespace RealtyAgency
             return SearchValuesQuery(Query);
         }
 
+        public static string GetClientIDByAuthedUser()
+        {
+            string GetClientID = "execute GetClientIDByAuthedUser " + "\'" + AuthorizedUser + "\'";
+            DB.SearchValuesQuery(GetClientID);
+            string ClientID = ds.Tables[0].Rows[0][0].ToString();
 
+            return ClientID;
+        }
 
         /// <summary>
         /// Метод выполняющий запрос к базе данных

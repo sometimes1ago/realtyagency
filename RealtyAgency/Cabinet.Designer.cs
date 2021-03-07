@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.GoBack = new System.Windows.Forms.LinkLabel();
-            this.SortDealsGroup = new System.Windows.Forms.GroupBox();
-            this.AreasShowButton = new System.Windows.Forms.Button();
-            this.DealsOrderOptions = new System.Windows.Forms.ComboBox();
-            this.DealsOrderByLabel = new System.Windows.Forms.Label();
-            this.DealsSortOptions = new System.Windows.Forms.ComboBox();
-            this.DealsSortByLabel = new System.Windows.Forms.Label();
             this.GreetingsLabel = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DirectSearchGroup = new System.Windows.Forms.GroupBox();
-            this.ShowButton = new System.Windows.Forms.Button();
-            this.ValueLabel = new System.Windows.Forms.Label();
-            this.SearchByOptions = new System.Windows.Forms.ComboBox();
-            this.SearchByLabel = new System.Windows.Forms.Label();
-            this.SearchByInput = new System.Windows.Forms.TextBox();
-            this.SortDealsGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.DirectSearchGroup.SuspendLayout();
+            this.CabinetTabs = new System.Windows.Forms.TabControl();
+            this.UserSuggestions = new System.Windows.Forms.TabPage();
+            this.UserDeals = new System.Windows.Forms.TabPage();
+            this.DeleteAccLink = new System.Windows.Forms.LinkLabel();
+            this.DropAccTip = new System.Windows.Forms.Label();
+            this.SuggestionsData = new System.Windows.Forms.DataGridView();
+            this.SuggestionDeletingGroup = new System.Windows.Forms.GroupBox();
+            this.SuggNumberLabel = new System.Windows.Forms.Label();
+            this.SuggNumInput = new System.Windows.Forms.TextBox();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.Logo = new System.Windows.Forms.PictureBox();
+            this.CabinetTabs.SuspendLayout();
+            this.UserSuggestions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SuggestionsData)).BeginInit();
+            this.SuggestionDeletingGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // GoBack
@@ -64,73 +64,6 @@
             this.GoBack.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.GoBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GoBack_LinkClicked);
             // 
-            // SortDealsGroup
-            // 
-            this.SortDealsGroup.Controls.Add(this.AreasShowButton);
-            this.SortDealsGroup.Controls.Add(this.DealsOrderOptions);
-            this.SortDealsGroup.Controls.Add(this.DealsOrderByLabel);
-            this.SortDealsGroup.Controls.Add(this.DealsSortOptions);
-            this.SortDealsGroup.Controls.Add(this.DealsSortByLabel);
-            this.SortDealsGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.SortDealsGroup.Location = new System.Drawing.Point(12, 302);
-            this.SortDealsGroup.Name = "SortDealsGroup";
-            this.SortDealsGroup.Size = new System.Drawing.Size(265, 153);
-            this.SortDealsGroup.TabIndex = 26;
-            this.SortDealsGroup.TabStop = false;
-            this.SortDealsGroup.Text = "Сортировка";
-            // 
-            // AreasShowButton
-            // 
-            this.AreasShowButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
-            this.AreasShowButton.FlatAppearance.BorderSize = 0;
-            this.AreasShowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AreasShowButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.AreasShowButton.ForeColor = System.Drawing.Color.White;
-            this.AreasShowButton.Location = new System.Drawing.Point(18, 99);
-            this.AreasShowButton.Name = "AreasShowButton";
-            this.AreasShowButton.Size = new System.Drawing.Size(99, 34);
-            this.AreasShowButton.TabIndex = 19;
-            this.AreasShowButton.Text = "Показать";
-            this.AreasShowButton.UseVisualStyleBackColor = false;
-            // 
-            // DealsOrderOptions
-            // 
-            this.DealsOrderOptions.FormattingEnabled = true;
-            this.DealsOrderOptions.Location = new System.Drawing.Point(125, 63);
-            this.DealsOrderOptions.Name = "DealsOrderOptions";
-            this.DealsOrderOptions.Size = new System.Drawing.Size(121, 21);
-            this.DealsOrderOptions.TabIndex = 7;
-            // 
-            // DealsOrderByLabel
-            // 
-            this.DealsOrderByLabel.AutoSize = true;
-            this.DealsOrderByLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.DealsOrderByLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.DealsOrderByLabel.Location = new System.Drawing.Point(15, 63);
-            this.DealsOrderByLabel.Name = "DealsOrderByLabel";
-            this.DealsOrderByLabel.Size = new System.Drawing.Size(74, 15);
-            this.DealsOrderByLabel.TabIndex = 6;
-            this.DealsOrderByLabel.Text = "Порядок по";
-            // 
-            // DealsSortOptions
-            // 
-            this.DealsSortOptions.FormattingEnabled = true;
-            this.DealsSortOptions.Location = new System.Drawing.Point(125, 26);
-            this.DealsSortOptions.Name = "DealsSortOptions";
-            this.DealsSortOptions.Size = new System.Drawing.Size(121, 21);
-            this.DealsSortOptions.TabIndex = 5;
-            // 
-            // DealsSortByLabel
-            // 
-            this.DealsSortByLabel.AutoSize = true;
-            this.DealsSortByLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.DealsSortByLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.DealsSortByLabel.Location = new System.Drawing.Point(15, 26);
-            this.DealsSortByLabel.Name = "DealsSortByLabel";
-            this.DealsSortByLabel.Size = new System.Drawing.Size(102, 15);
-            this.DealsSortByLabel.TabIndex = 4;
-            this.DealsSortByLabel.Text = "Сортировать по";
-            // 
             // GreetingsLabel
             // 
             this.GreetingsLabel.AutoSize = true;
@@ -138,86 +71,132 @@
             this.GreetingsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.GreetingsLabel.Location = new System.Drawing.Point(71, 22);
             this.GreetingsLabel.Name = "GreetingsLabel";
-            this.GreetingsLabel.Size = new System.Drawing.Size(165, 29);
+            this.GreetingsLabel.Size = new System.Drawing.Size(205, 29);
             this.GreetingsLabel.TabIndex = 3;
-            this.GreetingsLabel.Text = "Ваши сделки";
+            this.GreetingsLabel.Text = "Личный кабинет";
             // 
-            // dataGridView1
+            // CabinetTabs
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 63);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(740, 220);
-            this.dataGridView1.TabIndex = 27;
+            this.CabinetTabs.Controls.Add(this.UserSuggestions);
+            this.CabinetTabs.Controls.Add(this.UserDeals);
+            this.CabinetTabs.Location = new System.Drawing.Point(18, 76);
+            this.CabinetTabs.Name = "CabinetTabs";
+            this.CabinetTabs.SelectedIndex = 0;
+            this.CabinetTabs.Size = new System.Drawing.Size(754, 373);
+            this.CabinetTabs.TabIndex = 25;
             // 
-            // DirectSearchGroup
+            // UserSuggestions
             // 
-            this.DirectSearchGroup.Controls.Add(this.SearchByInput);
-            this.DirectSearchGroup.Controls.Add(this.ShowButton);
-            this.DirectSearchGroup.Controls.Add(this.ValueLabel);
-            this.DirectSearchGroup.Controls.Add(this.SearchByOptions);
-            this.DirectSearchGroup.Controls.Add(this.SearchByLabel);
-            this.DirectSearchGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.DirectSearchGroup.Location = new System.Drawing.Point(332, 302);
-            this.DirectSearchGroup.Name = "DirectSearchGroup";
-            this.DirectSearchGroup.Size = new System.Drawing.Size(289, 153);
-            this.DirectSearchGroup.TabIndex = 27;
-            this.DirectSearchGroup.TabStop = false;
-            this.DirectSearchGroup.Text = "Прямой поиск";
+            this.UserSuggestions.Controls.Add(this.Logo);
+            this.UserSuggestions.Controls.Add(this.SuggestionDeletingGroup);
+            this.UserSuggestions.Controls.Add(this.SuggestionsData);
+            this.UserSuggestions.Location = new System.Drawing.Point(4, 22);
+            this.UserSuggestions.Name = "UserSuggestions";
+            this.UserSuggestions.Padding = new System.Windows.Forms.Padding(3);
+            this.UserSuggestions.Size = new System.Drawing.Size(746, 347);
+            this.UserSuggestions.TabIndex = 0;
+            this.UserSuggestions.Text = "Мои предложения";
+            this.UserSuggestions.UseVisualStyleBackColor = true;
             // 
-            // ShowButton
+            // UserDeals
             // 
-            this.ShowButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
-            this.ShowButton.FlatAppearance.BorderSize = 0;
-            this.ShowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ShowButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.ShowButton.ForeColor = System.Drawing.Color.White;
-            this.ShowButton.Location = new System.Drawing.Point(18, 99);
-            this.ShowButton.Name = "ShowButton";
-            this.ShowButton.Size = new System.Drawing.Size(99, 34);
-            this.ShowButton.TabIndex = 19;
-            this.ShowButton.Text = "Показать";
-            this.ShowButton.UseVisualStyleBackColor = false;
+            this.UserDeals.Location = new System.Drawing.Point(4, 22);
+            this.UserDeals.Name = "UserDeals";
+            this.UserDeals.Padding = new System.Windows.Forms.Padding(3);
+            this.UserDeals.Size = new System.Drawing.Size(746, 347);
+            this.UserDeals.TabIndex = 1;
+            this.UserDeals.Text = "Мои сделки";
+            this.UserDeals.UseVisualStyleBackColor = true;
             // 
-            // ValueLabel
+            // DeleteAccLink
             // 
-            this.ValueLabel.AutoSize = true;
-            this.ValueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.ValueLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.ValueLabel.Location = new System.Drawing.Point(15, 63);
-            this.ValueLabel.Name = "ValueLabel";
-            this.ValueLabel.Size = new System.Drawing.Size(114, 15);
-            this.ValueLabel.TabIndex = 6;
-            this.ValueLabel.Text = "Введите значение";
+            this.DeleteAccLink.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.DeleteAccLink.AutoSize = true;
+            this.DeleteAccLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
+            this.DeleteAccLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.DeleteAccLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.DeleteAccLink.Location = new System.Drawing.Point(600, 36);
+            this.DeleteAccLink.Name = "DeleteAccLink";
+            this.DeleteAccLink.Size = new System.Drawing.Size(168, 15);
+            this.DeleteAccLink.TabIndex = 26;
+            this.DeleteAccLink.TabStop = true;
+            this.DeleteAccLink.Text = "удалить учетную запись";
+            this.DeleteAccLink.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.DeleteAccLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.DeleteAccLink_LinkClicked);
             // 
-            // SearchByOptions
+            // DropAccTip
             // 
-            this.SearchByOptions.FormattingEnabled = true;
-            this.SearchByOptions.Location = new System.Drawing.Point(150, 25);
-            this.SearchByOptions.Name = "SearchByOptions";
-            this.SearchByOptions.Size = new System.Drawing.Size(121, 21);
-            this.SearchByOptions.TabIndex = 5;
+            this.DropAccTip.AutoSize = true;
+            this.DropAccTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.DropAccTip.Location = new System.Drawing.Point(530, 39);
+            this.DropAccTip.Name = "DropAccTip";
+            this.DropAccTip.Size = new System.Drawing.Size(64, 13);
+            this.DropAccTip.TabIndex = 27;
+            this.DropAccTip.Text = "Вы можете";
             // 
-            // SearchByLabel
+            // SuggestionsData
             // 
-            this.SearchByLabel.AutoSize = true;
-            this.SearchByLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.SearchByLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.SearchByLabel.Location = new System.Drawing.Point(15, 26);
-            this.SearchByLabel.Name = "SearchByLabel";
-            this.SearchByLabel.Size = new System.Drawing.Size(66, 15);
-            this.SearchByLabel.TabIndex = 4;
-            this.SearchByLabel.Text = "Искать по";
+            this.SuggestionsData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SuggestionsData.Location = new System.Drawing.Point(14, 25);
+            this.SuggestionsData.Name = "SuggestionsData";
+            this.SuggestionsData.Size = new System.Drawing.Size(714, 186);
+            this.SuggestionsData.TabIndex = 0;
             // 
-            // SearchByInput
+            // SuggestionDeletingGroup
             // 
-            this.SearchByInput.Location = new System.Drawing.Point(150, 64);
-            this.SearchByInput.Name = "SearchByInput";
-            this.SearchByInput.Size = new System.Drawing.Size(121, 20);
-            this.SearchByInput.TabIndex = 20;
+            this.SuggestionDeletingGroup.Controls.Add(this.DeleteButton);
+            this.SuggestionDeletingGroup.Controls.Add(this.SuggNumInput);
+            this.SuggestionDeletingGroup.Controls.Add(this.SuggNumberLabel);
+            this.SuggestionDeletingGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.SuggestionDeletingGroup.Location = new System.Drawing.Point(14, 239);
+            this.SuggestionDeletingGroup.Name = "SuggestionDeletingGroup";
+            this.SuggestionDeletingGroup.Size = new System.Drawing.Size(391, 88);
+            this.SuggestionDeletingGroup.TabIndex = 1;
+            this.SuggestionDeletingGroup.TabStop = false;
+            this.SuggestionDeletingGroup.Text = "Удалить предложение";
+            // 
+            // SuggNumberLabel
+            // 
+            this.SuggNumberLabel.AutoSize = true;
+            this.SuggNumberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.SuggNumberLabel.Location = new System.Drawing.Point(17, 41);
+            this.SuggNumberLabel.Name = "SuggNumberLabel";
+            this.SuggNumberLabel.Size = new System.Drawing.Size(84, 13);
+            this.SuggNumberLabel.TabIndex = 0;
+            this.SuggNumberLabel.Text = "Введите номер";
+            // 
+            // SuggNumInput
+            // 
+            this.SuggNumInput.Location = new System.Drawing.Point(118, 41);
+            this.SuggNumInput.Name = "SuggNumInput";
+            this.SuggNumInput.Size = new System.Drawing.Size(100, 20);
+            this.SuggNumInput.TabIndex = 1;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
+            this.DeleteButton.FlatAppearance.BorderSize = 0;
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
+            this.DeleteButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteButton.Location = new System.Drawing.Point(247, 36);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(99, 27);
+            this.DeleteButton.TabIndex = 10;
+            this.DeleteButton.Text = "Удалить";
+            this.DeleteButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // Logo
+            // 
+            this.Logo.Image = global::RealtyAgency.Properties.Resources.logo;
+            this.Logo.Location = new System.Drawing.Point(641, 288);
+            this.Logo.Margin = new System.Windows.Forms.Padding(15);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(87, 44);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Logo.TabIndex = 28;
+            this.Logo.TabStop = false;
             // 
             // Cabinet
             // 
@@ -225,20 +204,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Controls.Add(this.DirectSearchGroup);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.SortDealsGroup);
+            this.Controls.Add(this.DropAccTip);
+            this.Controls.Add(this.DeleteAccLink);
+            this.Controls.Add(this.CabinetTabs);
             this.Controls.Add(this.GoBack);
             this.Controls.Add(this.GreetingsLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Cabinet";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Агенство недвижимости - личный кабинет";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cabinet_FormClosing);
-            this.SortDealsGroup.ResumeLayout(false);
-            this.SortDealsGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.DirectSearchGroup.ResumeLayout(false);
-            this.DirectSearchGroup.PerformLayout();
+            this.Load += new System.EventHandler(this.Cabinet_Load);
+            this.CabinetTabs.ResumeLayout(false);
+            this.UserSuggestions.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SuggestionsData)).EndInit();
+            this.SuggestionDeletingGroup.ResumeLayout(false);
+            this.SuggestionDeletingGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,19 +228,17 @@
 
         #endregion
         private System.Windows.Forms.LinkLabel GoBack;
-        private System.Windows.Forms.GroupBox SortDealsGroup;
-        private System.Windows.Forms.Button AreasShowButton;
-        private System.Windows.Forms.ComboBox DealsOrderOptions;
-        private System.Windows.Forms.Label DealsOrderByLabel;
-        private System.Windows.Forms.ComboBox DealsSortOptions;
-        private System.Windows.Forms.Label DealsSortByLabel;
         private System.Windows.Forms.Label GreetingsLabel;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox DirectSearchGroup;
-        private System.Windows.Forms.TextBox SearchByInput;
-        private System.Windows.Forms.Button ShowButton;
-        private System.Windows.Forms.Label ValueLabel;
-        private System.Windows.Forms.ComboBox SearchByOptions;
-        private System.Windows.Forms.Label SearchByLabel;
+        private System.Windows.Forms.TabControl CabinetTabs;
+        private System.Windows.Forms.TabPage UserSuggestions;
+        private System.Windows.Forms.GroupBox SuggestionDeletingGroup;
+        private System.Windows.Forms.TextBox SuggNumInput;
+        private System.Windows.Forms.Label SuggNumberLabel;
+        private System.Windows.Forms.DataGridView SuggestionsData;
+        private System.Windows.Forms.TabPage UserDeals;
+        private System.Windows.Forms.LinkLabel DeleteAccLink;
+        private System.Windows.Forms.Label DropAccTip;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.PictureBox Logo;
     }
 }

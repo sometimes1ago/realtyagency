@@ -65,6 +65,12 @@
       <DependentUpon>DataRecover.cs</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
+    <Compile Include="DeleteAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteAccount.Designer.cs">
+      <DependentUpon>DeleteAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,12 +82,6 @@
     </Compile>
     <Compile Include="Rieltor.Designer.cs">
       <DependentUpon>Rieltor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RieltorsList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RieltorsList.Designer.cs">
-      <DependentUpon>RieltorsList.cs</DependentUpon>
     </Compile>
     <Compile Include="SellRealty.cs">
       <SubType>Form</SubType>
@@ -112,14 +112,14 @@
     <EmbeddedResource Include="DataRecover.resx">
       <DependentUpon>DataRecover.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeleteAccount.resx">
+      <DependentUpon>DeleteAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rieltor.resx">
       <DependentUpon>Rieltor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RieltorsList.resx">
-      <DependentUpon>RieltorsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SellRealty.resx">
       <DependentUpon>SellRealty.cs</DependentUpon>

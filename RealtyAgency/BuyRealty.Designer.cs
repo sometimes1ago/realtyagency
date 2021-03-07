@@ -172,7 +172,8 @@
             "Улице",
             "Дому",
             "Комнатам",
-            "Этажам"});
+            "Этажам",
+            "Стоимости"});
             this.SortOptions.Location = new System.Drawing.Point(125, 26);
             this.SortOptions.Name = "SortOptions";
             this.SortOptions.Size = new System.Drawing.Size(121, 21);
@@ -381,7 +382,8 @@
             "Улице",
             "Дому",
             "Комнатам",
-            "Этажам"});
+            "Этажам",
+            "Стоимости"});
             this.ArptSortByOpt.Location = new System.Drawing.Point(125, 26);
             this.ArptSortByOpt.Name = "ArptSortByOpt";
             this.ArptSortByOpt.Size = new System.Drawing.Size(121, 21);
@@ -456,6 +458,7 @@
             this.BuyAprtButton.TabIndex = 19;
             this.BuyAprtButton.Text = "Купить";
             this.BuyAprtButton.UseVisualStyleBackColor = false;
+            this.BuyAprtButton.Click += new System.EventHandler(this.BuyAprtButton_Click);
             // 
             // AprtOptions
             // 
@@ -516,10 +519,14 @@
             this.AreasShowButton.TabIndex = 19;
             this.AreasShowButton.Text = "Показать";
             this.AreasShowButton.UseVisualStyleBackColor = false;
+            this.AreasShowButton.Click += new System.EventHandler(this.AreasShowButton_Click);
             // 
             // AreasOrderOptions
             // 
             this.AreasOrderOptions.FormattingEnabled = true;
+            this.AreasOrderOptions.Items.AddRange(new object[] {
+            "Возрастанию",
+            "Убыванию"});
             this.AreasOrderOptions.Location = new System.Drawing.Point(125, 63);
             this.AreasOrderOptions.Name = "AreasOrderOptions";
             this.AreasOrderOptions.Size = new System.Drawing.Size(121, 21);
@@ -539,6 +546,10 @@
             // AreasSortOptions
             // 
             this.AreasSortOptions.FormattingEnabled = true;
+            this.AreasSortOptions.Items.AddRange(new object[] {
+            "Городу",
+            "Улице",
+            "Стоимости"});
             this.AreasSortOptions.Location = new System.Drawing.Point(125, 26);
             this.AreasSortOptions.Name = "AreasSortOptions";
             this.AreasSortOptions.Size = new System.Drawing.Size(121, 21);
@@ -613,6 +624,7 @@
             this.AreasBuyButton.TabIndex = 19;
             this.AreasBuyButton.Text = "Купить";
             this.AreasBuyButton.UseVisualStyleBackColor = false;
+            this.AreasBuyButton.Click += new System.EventHandler(this.AreasBuyButton_Click);
             // 
             // AreasOptions
             // 

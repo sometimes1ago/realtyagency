@@ -34,7 +34,6 @@
             this.SellButton = new System.Windows.Forms.Button();
             this.CabinetButton = new System.Windows.Forms.Button();
             this.LogoutLink = new System.Windows.Forms.LinkLabel();
-            this.ShowRieltorsButton = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +67,7 @@
             this.BuyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BuyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
             this.BuyButton.ForeColor = System.Drawing.Color.White;
-            this.BuyButton.Location = new System.Drawing.Point(62, 217);
+            this.BuyButton.Location = new System.Drawing.Point(149, 212);
             this.BuyButton.Name = "BuyButton";
             this.BuyButton.Size = new System.Drawing.Size(140, 51);
             this.BuyButton.TabIndex = 8;
@@ -83,7 +82,7 @@
             this.SellButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SellButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
             this.SellButton.ForeColor = System.Drawing.Color.White;
-            this.SellButton.Location = new System.Drawing.Point(236, 217);
+            this.SellButton.Location = new System.Drawing.Point(323, 212);
             this.SellButton.Name = "SellButton";
             this.SellButton.Size = new System.Drawing.Size(140, 51);
             this.SellButton.TabIndex = 9;
@@ -98,7 +97,7 @@
             this.CabinetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CabinetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
             this.CabinetButton.ForeColor = System.Drawing.Color.White;
-            this.CabinetButton.Location = new System.Drawing.Point(584, 217);
+            this.CabinetButton.Location = new System.Drawing.Point(504, 212);
             this.CabinetButton.Name = "CabinetButton";
             this.CabinetButton.Size = new System.Drawing.Size(140, 51);
             this.CabinetButton.TabIndex = 10;
@@ -122,21 +121,6 @@
             this.LogoutLink.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.LogoutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLink_LinkClicked);
             // 
-            // ShowRieltorsButton
-            // 
-            this.ShowRieltorsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
-            this.ShowRieltorsButton.FlatAppearance.BorderSize = 0;
-            this.ShowRieltorsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ShowRieltorsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.ShowRieltorsButton.ForeColor = System.Drawing.Color.White;
-            this.ShowRieltorsButton.Location = new System.Drawing.Point(410, 217);
-            this.ShowRieltorsButton.Name = "ShowRieltorsButton";
-            this.ShowRieltorsButton.Size = new System.Drawing.Size(140, 51);
-            this.ShowRieltorsButton.TabIndex = 13;
-            this.ShowRieltorsButton.Text = "Посмотреть риелторов";
-            this.ShowRieltorsButton.UseVisualStyleBackColor = false;
-            this.ShowRieltorsButton.Click += new System.EventHandler(this.ShowRieltorsButton_Click);
-            // 
             // Logo
             // 
             this.Logo.Image = global::RealtyAgency.Properties.Resources.logo;
@@ -154,7 +138,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.ShowRieltorsButton);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.LogoutLink);
             this.Controls.Add(this.CabinetButton);
@@ -184,6 +167,5 @@
         private System.Windows.Forms.Button CabinetButton;
         private System.Windows.Forms.LinkLabel LogoutLink;
         private System.Windows.Forms.PictureBox Logo;
-        private System.Windows.Forms.Button ShowRieltorsButton;
     }
 }
