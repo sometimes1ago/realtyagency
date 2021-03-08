@@ -216,7 +216,7 @@ namespace RealtyAgency
             {
                 //Добавление новой потребности клиента
                 string CreateNewNeeds = "insert into ClientsWishes(Offer, Client, Rieltor) values(" +
-                    "\'" + GetRealtyIDBySplitter(AdrOpt.SelectedItem.ToString(), ',') + "\'" + "," +
+                    "\'" + DB.GetRealtyIDBySplitter(AdrOpt.SelectedItem.ToString(), ',') + "\'" + "," +
                     "\'" + DB.GetClientIDByAuthedUser() + "\'" + "," + "\'" + GetRieltorIDBySplitter(HousesRieltorOpt.SelectedItem.ToString(), ' ') + "\'" + ")";
                 DB.Execute(CreateNewNeeds);
 
@@ -238,24 +238,38 @@ namespace RealtyAgency
 
         private void AreasBuyButton_Click(object sender, EventArgs e)
         {
-            //Добавление новой потребности клиента
-            string CreateNewNeeds = "insert into ClientsWishes(Offer, Client, Rieltor) values(" +
-                "\'" + GetRealtyIDBySplitter(AreasOptions.SelectedItem.ToString(), ',') + "\'" + "," +
-                "\'" + DB.GetClientIDByAuthedUser() + "\'" + "," + "\'" + GetRieltorIDBySplitter(AreasRieltorOptions.SelectedItem.ToString(), ' ') + "\'" + ")";
-            DB.Execute(CreateNewNeeds);
+            try
+            {
+                //Добавление новой потребности клиента
+                string CreateNewNeeds = "insert into ClientsWishes(Offer, Client, Rieltor) values(" +
+                    "\'" + GetRealtyIDBySplitter(AreasOptions.SelectedItem.ToString(), ',') + "\'" + "," +
+                    "\'" + DB.GetClientIDByAuthedUser() + "\'" + "," + "\'" + GetRieltorIDBySplitter(AreasRieltorOptions.SelectedItem.ToString(), ' ') + "\'" + ")";
+                DB.Execute(CreateNewNeeds);
 
-            MessageBox.Show("Заявка на покупку земли успешно создана и появится в личном кабинете!");
+                MessageBox.Show("Заявка на покупку земли успешно создана и появится в личном кабинете!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void BuyAprtButton_Click(object sender, EventArgs e)
         {
-            //Добавление новой потребности клиента
-            string CreateNewNeeds = "insert into ClientsWishes(Offer, Client, Rieltor) values(" +
-                "\'" + GetRealtyIDBySplitter(AprtOptions.SelectedItem.ToString(), ',') + "\'" + "," +
-                "\'" + DB.GetClientIDByAuthedUser() + "\'" + "," + "\'" + GetRieltorIDBySplitter(AprtRieltorOptions.SelectedItem.ToString(), ' ') + "\'" + ")";
-            DB.Execute(CreateNewNeeds);
+            try
+            {
+                //Добавление новой потребности клиента
+                string CreateNewNeeds = "insert into ClientsWishes(Offer, Client, Rieltor) values(" +
+                    "\'" + GetRealtyIDBySplitter(AprtOptions.SelectedItem.ToString(), ',') + "\'" + "," +
+                    "\'" + DB.GetClientIDByAuthedUser() + "\'" + "," + "\'" + GetRieltorIDBySplitter(AprtRieltorOptions.SelectedItem.ToString(), ' ') + "\'" + ")";
+                DB.Execute(CreateNewNeeds);
 
-            MessageBox.Show("Заявка на покупку земли успешно создана и появится в личном кабинете!");
+                MessageBox.Show("Заявка на покупку земли успешно создана и появится в личном кабинете!");
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

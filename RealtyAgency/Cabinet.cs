@@ -34,6 +34,9 @@ namespace RealtyAgency
         {
             string GetUserSuggestions = "execute GetUserSuggestions " + "\'" + DB.AuthorizedUser + "\'";
             SuggestionsData.DataSource = DB.SearchValuesQuery(GetUserSuggestions);
+
+            string GetUserQueries = "execute GetUserQueriesByLogin " + "\'" + DB.AuthorizedUser + "\'";
+            UserQueriesData.DataSource = DB.SearchValuesQuery(GetUserQueries);
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -69,6 +72,33 @@ namespace RealtyAgency
         {
             DeleteAccount delacc = new DeleteAccount();
             delacc.Show();
+        }
+
+        private void DeleteQueryButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (int.TryParse(QueryNumInput.Text, out int QueryNumber))
+                {
+                    DB.GetClientIDByAuthedUser();
+                    string ClientID = DB.ds.Tables[0].Rows[0][0].ToString();
+                    string DeleteUserQuery = "delete from ClientsWishes where ID = " + "\'" + QueryNumber + "\'" + " and Client = " + "\'" + ClientID + "\'";
+                    DB.Execute(DeleteUserQuery);
+
+                    MessageBox.Show($@"Заявка под номером {QueryNumInput.Text} успешно удалена!");
+
+                    string GetUserQueries = "execute GetUserQueriesByLogin " + "\'" + DB.AuthorizedUser + "\'";
+                    UserQueriesData.DataSource = DB.SearchValuesQuery(GetUserQueries);
+                }
+                else
+                {
+                    throw new Exception("Номер заявки может быть только целым числом!");
+                }
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

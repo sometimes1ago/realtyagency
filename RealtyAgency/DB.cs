@@ -70,6 +70,19 @@ namespace RealtyAgency
             return orderBy;
         }
 
+        public static string GetRealtyIDBySplitter(string SplitableString, char Splitter)
+        {
+            string SelectedRealty = SplitableString;
+            string[] SplStrArr = SelectedRealty.Split(Splitter);
+
+            string GetRealtyID = "select OfferID from RealtyOffers where City = " + "\'" + SplStrArr[0] + "\'" +
+                " and Street = " + "\'" + SplStrArr[1] + "\'" + " and House = " + "\'" + SplStrArr[2] + "\'" + " and Number = " + "\'" + SplStrArr[3] + "\'";
+            SearchValuesQuery(GetRealtyID);
+            string RealtyID = ds.Tables[0].Rows[0][0].ToString();
+
+            return RealtyID;
+        }
+
         public static object GetAuthorizedUserID()
         {
             string Query = "select UserID from Users where UserLogin = " + "\'" + AuthorizedUser + "\'";

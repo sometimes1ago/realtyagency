@@ -127,6 +127,42 @@ TotalArea int not null
 )
 go
 
+create alter procedure GetUserQueriesByLogin
+@userlogin varchar(25)
+as
+	begin	
+		select ClientsWishes.ID as QueryID, OfferType.TypeName as RealtyType, RealtyOffers.City, RealtyOffers.Street, RealtyOffers.House, RealtyOffers.Number, Rieltors.FirstName as RieltorSurname , Rieltors.MiddleName as RieltorName
+		from ClientsWishes inner join Clients on ClientsWishes.Client = Clients.ClientID
+						   inner join Users on Clients.AuthData = Users.UserID
+						   inner join RealtyOffers on ClientsWishes.Offer = RealtyOffers.OfferID
+						   inner join Rieltors on ClientsWishes.Rieltor = Rieltors.RieltorID
+						   inner join OfferType on RealtyOffers.OfferType = OfferType.ID
+		where Users.UserLogin = @userlogin and ClientsWishes.Status between 'Новый' and 'Принят'
+	end
+go
+
+create procedure GetClientsWishes
+@rieltor varchar(25)
+as
+	select ClientsWishes.ID, OfferType.TypeName, RealtyOffers.City, RealtyOffers.Street, RealtyOffers.House, RealtyOffers.Number, RealtyOffers.Price, Clients.FirstName, Clients.LastName
+	from ClientsWishes inner join Clients on ClientsWishes.Client = Clients.ClientID
+					   inner join RealtyOffers on ClientsWishes.Offer = RealtyOffers.OfferID
+					   inner join OfferType on RealtyOffers.OfferType = OfferType.ID
+					   inner join Rieltors on ClientsWishes.Rieltor = Rieltors.RieltorID
+					   inner join Users on Users.UserID = Rieltors.AuthData
+	where Users.UserLogin = @rieltor				   
+go
+
+create procedure GetRieltorIDByAuthedUser
+@userlogin varchar(25)
+as
+	begin
+		select Rieltors.RieltorID
+		from Rieltors inner join Users on Rieltors.AuthData = Users.UserID
+		where Users.UserLogin = @userlogin
+	end
+go
+
 create view GetRealtyData
 (OfferType, City, Street, House, Number, Latitude, Longitude, RFloor, Rooms, TotalArea, Price)
 as
@@ -158,6 +194,7 @@ create view GetRieltorsData
 as
 	select FirstName, MiddleName, LastName, DealShare, Status
 	from Rieltors
+	where Status = 'Не занят'
 go
 
 create procedure GetAddresses

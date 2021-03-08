@@ -30,6 +30,7 @@ namespace RealtyAgency
             FloorInput.Text = "";
             RoomsInput.Text = "";
             TotalAreaInput.Text = "";
+            PriceInput.Text = "";
         }
 
         private void SellButton_Click(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace RealtyAgency
                     if (int.TryParse(FloorInput.Text, out int floor) && int.TryParse(RoomsInput.Text, out int rooms) && int.TryParse(PriceInput.Text, out int price))
                     {
                         //Вставка нового предложения
-                        string CreateNewOffer = "insert into RealtyOffers(OfferType, City, Street, House, Number, Latitude, Longitude, RFloor, Rooms, TotalArea)" +
+                        string CreateNewOffer = "insert into RealtyOffers(OfferType, City, Street, House, Number, Latitude, Longitude, RFloor, Rooms, TotalArea, Price)" +
                         "values(" + "\'" + SelectedTypeID + "\'" + "," + "\'" + CityInput.Text + "\'" + "," + "\'" + SteetInput.Text + "\'" + "," + "\'" +
                         HNumInput.Text + "\'" + "," + "\'" + AptNumLabel.Text + "\'" + "," + "Convert(float," + LatitudeInput.Text + ")" + "," + "Convert(float," + LongitudeInput.Text + ")" +
                         "," + "\'" + floor + "\'" + "," + "\'" + rooms + "\'" + "," + "\'" + TotalAreaInput.Text + "\'" + "," + "\'" + price + "\'" + ")";
@@ -78,7 +79,7 @@ namespace RealtyAgency
                     }
                     else
                     {
-                        throw new Exception("Этаж и количество комнат могут быть только целыми значениями!");
+                        throw new Exception("Этаж, количество комнат и цена могут быть только целыми значениями!");
                     }
                 }
                 else

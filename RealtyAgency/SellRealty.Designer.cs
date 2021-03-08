@@ -289,9 +289,9 @@
             this.PriceLabel.AutoSize = true;
             this.PriceLabel.Location = new System.Drawing.Point(533, 182);
             this.PriceLabel.Name = "PriceLabel";
-            this.PriceLabel.Size = new System.Drawing.Size(178, 13);
+            this.PriceLabel.Size = new System.Drawing.Size(33, 13);
             this.PriceLabel.TabIndex = 46;
-            this.PriceLabel.Text = "Общая площадь(целые значения)";
+            this.PriceLabel.Text = "Цена";
             // 
             // SellRealty
             // 
