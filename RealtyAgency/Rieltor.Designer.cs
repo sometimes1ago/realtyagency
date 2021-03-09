@@ -30,8 +30,10 @@
         {
             this.CabinetTabs = new System.Windows.Forms.TabControl();
             this.UserQueries = new System.Windows.Forms.TabPage();
+            this.IncomeLabel = new System.Windows.Forms.Label();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.SuggAcceptGroup = new System.Windows.Forms.GroupBox();
+            this.UsersQueriesOpt = new System.Windows.Forms.ComboBox();
             this.AcceptButton = new System.Windows.Forms.Button();
             this.SuggNumberLabel = new System.Windows.Forms.Label();
             this.UsersQueriesData = new System.Windows.Forms.DataGridView();
@@ -40,8 +42,10 @@
             this.CompletedDealsData = new System.Windows.Forms.DataGridView();
             this.GreetingsLabel = new System.Windows.Forms.Label();
             this.LogoutLink = new System.Windows.Forms.LinkLabel();
-            this.UsersQueriesOpt = new System.Windows.Forms.ComboBox();
-            this.IncomeLabel = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.FinishQuery = new System.Windows.Forms.Button();
+            this.AcceptedNum = new System.Windows.Forms.Label();
+            this.AcceptedQueryNum = new System.Windows.Forms.TextBox();
             this.CabinetTabs.SuspendLayout();
             this.UserQueries.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
@@ -50,6 +54,7 @@
             this.CompletedDeals.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompletedDealsData)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // CabinetTabs
@@ -64,8 +69,8 @@
             // 
             // UserQueries
             // 
+            this.UserQueries.Controls.Add(this.groupBox1);
             this.UserQueries.Controls.Add(this.IncomeLabel);
-            this.UserQueries.Controls.Add(this.Logo);
             this.UserQueries.Controls.Add(this.SuggAcceptGroup);
             this.UserQueries.Controls.Add(this.UsersQueriesData);
             this.UserQueries.Location = new System.Drawing.Point(4, 22);
@@ -76,10 +81,20 @@
             this.UserQueries.Text = "Заявки пользователей";
             this.UserQueries.UseVisualStyleBackColor = true;
             // 
+            // IncomeLabel
+            // 
+            this.IncomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
+            this.IncomeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.IncomeLabel.Location = new System.Drawing.Point(340, 252);
+            this.IncomeLabel.Name = "IncomeLabel";
+            this.IncomeLabel.Size = new System.Drawing.Size(136, 52);
+            this.IncomeLabel.TabIndex = 30;
+            this.IncomeLabel.Text = "Ваша потенциальная прибыль: ";
+            // 
             // Logo
             // 
             this.Logo.Image = global::RealtyAgency.Properties.Resources.logo;
-            this.Logo.Location = new System.Drawing.Point(671, 298);
+            this.Logo.Location = new System.Drawing.Point(245, 24);
             this.Logo.Margin = new System.Windows.Forms.Padding(15);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(57, 34);
@@ -95,10 +110,19 @@
             this.SuggAcceptGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
             this.SuggAcceptGroup.Location = new System.Drawing.Point(14, 239);
             this.SuggAcceptGroup.Name = "SuggAcceptGroup";
-            this.SuggAcceptGroup.Size = new System.Drawing.Size(456, 88);
+            this.SuggAcceptGroup.Size = new System.Drawing.Size(320, 88);
             this.SuggAcceptGroup.TabIndex = 1;
             this.SuggAcceptGroup.TabStop = false;
             this.SuggAcceptGroup.Text = "Принять заявку";
+            // 
+            // UsersQueriesOpt
+            // 
+            this.UsersQueriesOpt.FormattingEnabled = true;
+            this.UsersQueriesOpt.Location = new System.Drawing.Point(9, 59);
+            this.UsersQueriesOpt.Name = "UsersQueriesOpt";
+            this.UsersQueriesOpt.Size = new System.Drawing.Size(191, 21);
+            this.UsersQueriesOpt.TabIndex = 11;
+            this.UsersQueriesOpt.SelectedIndexChanged += new System.EventHandler(this.UsersQueriesOpt_SelectedIndexChanged);
             // 
             // AcceptButton
             // 
@@ -107,7 +131,7 @@
             this.AcceptButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AcceptButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
             this.AcceptButton.ForeColor = System.Drawing.Color.White;
-            this.AcceptButton.Location = new System.Drawing.Point(338, 33);
+            this.AcceptButton.Location = new System.Drawing.Point(215, 55);
             this.AcceptButton.Name = "AcceptButton";
             this.AcceptButton.Size = new System.Drawing.Size(99, 27);
             this.AcceptButton.TabIndex = 10;
@@ -119,7 +143,7 @@
             // 
             this.SuggNumberLabel.AutoSize = true;
             this.SuggNumberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.SuggNumberLabel.Location = new System.Drawing.Point(17, 41);
+            this.SuggNumberLabel.Location = new System.Drawing.Point(6, 33);
             this.SuggNumberLabel.Name = "SuggNumberLabel";
             this.SuggNumberLabel.Size = new System.Drawing.Size(95, 13);
             this.SuggNumberLabel.TabIndex = 0;
@@ -148,10 +172,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::RealtyAgency.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(641, 288);
+            this.pictureBox1.Location = new System.Drawing.Point(676, 300);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(15);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(87, 44);
+            this.pictureBox1.Size = new System.Drawing.Size(52, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
@@ -161,7 +185,7 @@
             this.CompletedDealsData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CompletedDealsData.Location = new System.Drawing.Point(16, 22);
             this.CompletedDealsData.Name = "CompletedDealsData";
-            this.CompletedDealsData.Size = new System.Drawing.Size(714, 224);
+            this.CompletedDealsData.Size = new System.Drawing.Size(714, 260);
             this.CompletedDealsData.TabIndex = 2;
             // 
             // GreetingsLabel
@@ -191,24 +215,50 @@
             this.LogoutLink.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.LogoutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLink_LinkClicked);
             // 
-            // UsersQueriesOpt
+            // groupBox1
             // 
-            this.UsersQueriesOpt.FormattingEnabled = true;
-            this.UsersQueriesOpt.Location = new System.Drawing.Point(128, 38);
-            this.UsersQueriesOpt.Name = "UsersQueriesOpt";
-            this.UsersQueriesOpt.Size = new System.Drawing.Size(191, 21);
-            this.UsersQueriesOpt.TabIndex = 11;
-            this.UsersQueriesOpt.SelectedIndexChanged += new System.EventHandler(this.UsersQueriesOpt_SelectedIndexChanged);
+            this.groupBox1.Controls.Add(this.AcceptedQueryNum);
+            this.groupBox1.Controls.Add(this.FinishQuery);
+            this.groupBox1.Controls.Add(this.AcceptedNum);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.groupBox1.Location = new System.Drawing.Point(497, 252);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(243, 88);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Завершить сделку";
             // 
-            // IncomeLabel
+            // FinishQuery
             // 
-            this.IncomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.IncomeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
-            this.IncomeLabel.Location = new System.Drawing.Point(486, 246);
-            this.IncomeLabel.Name = "IncomeLabel";
-            this.IncomeLabel.Size = new System.Drawing.Size(167, 52);
-            this.IncomeLabel.TabIndex = 30;
-            this.IncomeLabel.Text = "Ваша потенциальная прибыль: ";
+            this.FinishQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
+            this.FinishQuery.FlatAppearance.BorderSize = 0;
+            this.FinishQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FinishQuery.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
+            this.FinishQuery.ForeColor = System.Drawing.Color.White;
+            this.FinishQuery.Location = new System.Drawing.Point(125, 50);
+            this.FinishQuery.Name = "FinishQuery";
+            this.FinishQuery.Size = new System.Drawing.Size(99, 27);
+            this.FinishQuery.TabIndex = 10;
+            this.FinishQuery.Text = "Завершить";
+            this.FinishQuery.UseVisualStyleBackColor = false;
+            this.FinishQuery.Click += new System.EventHandler(this.FinishQuery_Click);
+            // 
+            // AcceptedNum
+            // 
+            this.AcceptedNum.AutoSize = true;
+            this.AcceptedNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(110)))), ((int)(((byte)(122)))));
+            this.AcceptedNum.Location = new System.Drawing.Point(6, 33);
+            this.AcceptedNum.Name = "AcceptedNum";
+            this.AcceptedNum.Size = new System.Drawing.Size(80, 13);
+            this.AcceptedNum.TabIndex = 0;
+            this.AcceptedNum.Text = "Номер заявки";
+            // 
+            // AcceptedQueryNum
+            // 
+            this.AcceptedQueryNum.Location = new System.Drawing.Point(6, 55);
+            this.AcceptedQueryNum.Name = "AcceptedQueryNum";
+            this.AcceptedQueryNum.Size = new System.Drawing.Size(100, 20);
+            this.AcceptedQueryNum.TabIndex = 11;
             // 
             // Rieltor
             // 
@@ -216,6 +266,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.LogoutLink);
+            this.Controls.Add(this.Logo);
             this.Controls.Add(this.CabinetTabs);
             this.Controls.Add(this.GreetingsLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -232,6 +283,8 @@
             this.CompletedDeals.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompletedDealsData)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +306,9 @@
         private System.Windows.Forms.LinkLabel LogoutLink;
         private System.Windows.Forms.ComboBox UsersQueriesOpt;
         private System.Windows.Forms.Label IncomeLabel;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox AcceptedQueryNum;
+        private System.Windows.Forms.Button FinishQuery;
+        private System.Windows.Forms.Label AcceptedNum;
     }
 }

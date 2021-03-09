@@ -48,6 +48,11 @@ namespace RealtyAgency
                                 Hide();
                                 rl.Show();
                                 break;
+                            case "Администратор":
+                                Admin adm = new Admin();
+                                Hide();
+                                adm.Show();
+                                break;
                         }
                     }
                 }

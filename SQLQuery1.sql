@@ -71,6 +71,9 @@ values	('client','passoword12','1'),
 		('client25','passoword37','1')
 go
 
+insert into Users(UserLogin, UserPassword, UserRole, SecretKey)
+values	('admin','admin','3', 'kslj43452s')
+
 create table Rieltors
 (
 RieltorID int primary key identity,
@@ -127,7 +130,7 @@ TotalArea int not null
 )
 go
 
-create alter procedure GetUserQueriesByLogin
+create procedure GetUserQueriesByLogin
 @userlogin varchar(25)
 as
 	begin	
@@ -141,17 +144,53 @@ as
 	end
 go
 
+create view GetRieltorsList
+(Surname, Name, LastName, DealShare, Status)
+as
+	select FirstName, MiddleName, LastName, DealShare, Status
+	from Rieltors
+go
+
+create procedure GetUserCompletedQueriesByLogin
+@rieltorid varchar(25)
+as
+	begin	
+		select ClientsWishes.ID as QueryID, OfferType.TypeName as RealtyType, RealtyOffers.City, RealtyOffers.Street, RealtyOffers.House, RealtyOffers.Number, Rieltors.FirstName as RieltorSurname , Rieltors.MiddleName as RieltorName
+		from ClientsWishes inner join Clients on ClientsWishes.Client = Clients.ClientID
+						   inner join Users on Clients.AuthData = Users.UserID
+						   inner join RealtyOffers on ClientsWishes.Offer = RealtyOffers.OfferID
+						   inner join Rieltors on ClientsWishes.Rieltor = Rieltors.RieltorID
+						   inner join OfferType on RealtyOffers.OfferType = OfferType.ID
+		where Rieltors.RieltorID = @rieltorid and ClientsWishes.Status = 'Выполнен'
+	end
+go
+
+execute GetUserCompletedQueriesByLogin '1'
+
 create procedure GetClientsWishes
 @rieltor varchar(25)
 as
-	select ClientsWishes.ID, OfferType.TypeName, RealtyOffers.City, RealtyOffers.Street, RealtyOffers.House, RealtyOffers.Number, RealtyOffers.Price, Clients.FirstName, Clients.LastName
+	select ClientsWishes.ID, OfferType.TypeName, RealtyOffers.City, RealtyOffers.Street, RealtyOffers.House, RealtyOffers.Number, RealtyOffers.Price, Clients.FirstName, Clients.LastName, ClientsWishes.Status
 	from ClientsWishes inner join Clients on ClientsWishes.Client = Clients.ClientID
 					   inner join RealtyOffers on ClientsWishes.Offer = RealtyOffers.OfferID
 					   inner join OfferType on RealtyOffers.OfferType = OfferType.ID
 					   inner join Rieltors on ClientsWishes.Rieltor = Rieltors.RieltorID
 					   inner join Users on Users.UserID = Rieltors.AuthData
-	where Users.UserLogin = @rieltor				   
+	where Users.UserLogin = @rieltor 				   
 go
+
+create view GetAllClientsWishes
+(Number, RealtyType, City, Street, House, Price, ClientFirstName, ClientLastName, Status, RieltorSurname, RieltorLastName)
+as
+	select ClientsWishes.ID, OfferType.TypeName, RealtyOffers.City, RealtyOffers.Street, RealtyOffers.House, RealtyOffers.Price, Clients.FirstName, Clients.LastName, ClientsWishes.Status, Rieltors.FirstName, Rieltors.LastName
+	from ClientsWishes inner join Clients on ClientsWishes.Client = Clients.ClientID
+					   inner join RealtyOffers on ClientsWishes.Offer = RealtyOffers.OfferID
+					   inner join OfferType on RealtyOffers.OfferType = OfferType.ID
+					   inner join Rieltors on ClientsWishes.Rieltor = Rieltors.RieltorID
+					   inner join Users on Users.UserID = Rieltors.AuthData
+go 
+
+
 
 create procedure GetRieltorIDByAuthedUser
 @userlogin varchar(25)
@@ -160,6 +199,15 @@ as
 		select Rieltors.RieltorID
 		from Rieltors inner join Users on Rieltors.AuthData = Users.UserID
 		where Users.UserLogin = @userlogin
+	end
+go
+
+create procedure CreateNewRieltor
+@surname varchar(25), @name varchar(25), @lastName varchar(25), @dealshare int, @authData int
+as
+	begin
+		insert into Rieltors(FirstName, MiddleName, LastName, DealShare, AuthData, Status) 
+		values	(@surname, @name, @lastName, @dealshare, @authData, 'Не занят')
 	end
 go
 

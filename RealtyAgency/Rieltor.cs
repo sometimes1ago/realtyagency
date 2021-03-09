@@ -43,6 +43,13 @@ namespace RealtyAgency
             {
                 UsersQueriesOpt.Items.Add(clw);
             }
+
+            string GetRieltorID = "execute GetRieltorIDByAuthedUser " + "\'" + DB.AuthorizedUser + "\'";
+            DB.SearchValuesQuery(GetRieltorID);
+            string RieltorID = DB.ds.Tables[0].Rows[0][0].ToString();
+
+            string GetFisnishedDeals = "execute GetUserCompletedQueriesByLogin " + "\'" + RieltorID + "\'";
+            CompletedDealsData.DataSource = DB.SearchValuesQuery(GetFisnishedDeals);
         }
 
         
@@ -61,6 +68,9 @@ namespace RealtyAgency
             DB.Execute(UpdateRieltorStatus);
 
             MessageBox.Show($@"Заявка под номером {OfferID} успешно принята");
+
+            string GetUsersWishes = "execute GetClientsWishes " + "\'" + DB.AuthorizedUser + "\'";
+            UsersQueriesData.DataSource = DB.SearchValuesQuery(GetUsersWishes);
         }
 
         private void UsersQueriesOpt_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,6 +99,38 @@ namespace RealtyAgency
             Hide();
             Auth auth = new Auth();
             auth.Show();
+        }
+
+        private void FinishQuery_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (int.TryParse(AcceptedQueryNum.Text, out int AcceptedNum))
+                {
+                    string SetAcceptedFinished = "update ClientsWishes set Status = 'Выполнен' where ClientsWishes.ID = " + "\'" + AcceptedNum + "\'";
+                    DB.Execute(SetAcceptedFinished);
+
+                    string GetRieltorID = "execute GetRieltorIDByAuthedUser " + "\'" + DB.AuthorizedUser + "\'";
+                    DB.SearchValuesQuery(GetRieltorID);
+                    string RieltorID = DB.ds.Tables[0].Rows[0][0].ToString();
+
+                    string SetRieltorStatus = "update Rieltors set Status = 'Не занят' where RieltorID = " + "\'" + RieltorID + "\'";
+                    DB.Execute(SetRieltorStatus);
+
+                    MessageBox.Show($@"Сделка под номером {AcceptedNum} успешно завершена");
+
+                    string GetUsersWishes = "execute GetUserCompletedQueriesByLogin " + "\'" + DB.AuthorizedUser + "\'";
+                    CompletedDealsData.DataSource = DB.SearchValuesQuery(GetUsersWishes);
+                }
+                else
+                {
+                    throw new Exception("Номер заявки может быть только целым числом!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
